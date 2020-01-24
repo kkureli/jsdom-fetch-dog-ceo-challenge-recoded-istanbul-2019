@@ -67,7 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                     dropDown.addEventListener("change", function() {
-                        if (dropDown.value == "a") {
+                        if (dropDown.value == "all") {
+                            lis.forEach(element => {
+                                element.parentNode.style.display = "block"
+                            });
+                        } else if (dropDown.value == "a") {
                             lis.forEach(element => {
                                 if (element.textContent[0] != "a") {
                                     element.parentNode.style.display = "none"
